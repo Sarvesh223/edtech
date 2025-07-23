@@ -13,6 +13,8 @@ import { AboutUsModule } from './modules/about-us.module';
 import { ContactModule } from './modules/contact.module';
 import { PartnerModule } from './modules/partner.module';
 import { PromotionalBannerModule } from './modules/promotional-banner.module';
+import { JourneyModule } from './modules/journey.module';
+import { StatisticsModule } from './modules/statistics.module';
 
 @Module({
   imports: [
@@ -41,7 +43,9 @@ import { PromotionalBannerModule } from './modules/promotional-banner.module';
     AboutUsModule,
     ContactModule,
     PartnerModule,
-    PromotionalBannerModule
+    PromotionalBannerModule,
+    JourneyModule,
+    StatisticsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

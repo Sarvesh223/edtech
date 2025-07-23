@@ -22,6 +22,8 @@ const about_us_module_1 = require("./modules/about-us.module");
 const contact_module_1 = require("./modules/contact.module");
 const partner_module_1 = require("./modules/partner.module");
 const promotional_banner_module_1 = require("./modules/promotional-banner.module");
+const journey_module_1 = require("./modules/journey.module");
+const statistics_module_1 = require("./modules/statistics.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -49,7 +51,9 @@ exports.AppModule = AppModule = __decorate([
             about_us_module_1.AboutUsModule,
             contact_module_1.ContactModule,
             partner_module_1.PartnerModule,
-            promotional_banner_module_1.PromotionalBannerModule
+            promotional_banner_module_1.PromotionalBannerModule,
+            journey_module_1.JourneyModule,
+            statistics_module_1.StatisticsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
