@@ -24,6 +24,7 @@ const partner_module_1 = require("./modules/partner.module");
 const promotional_banner_module_1 = require("./modules/promotional-banner.module");
 const journey_module_1 = require("./modules/journey.module");
 const statistics_module_1 = require("./modules/statistics.module");
+const payment_module_1 = require("./modules/payment.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -54,6 +55,7 @@ exports.AppModule = AppModule = __decorate([
             promotional_banner_module_1.PromotionalBannerModule,
             journey_module_1.JourneyModule,
             statistics_module_1.StatisticsModule,
+            payment_module_1.PaymentModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

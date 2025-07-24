@@ -15,6 +15,7 @@ import { PartnerModule } from './modules/partner.module';
 import { PromotionalBannerModule } from './modules/promotional-banner.module';
 import { JourneyModule } from './modules/journey.module';
 import { StatisticsModule } from './modules/statistics.module';
+import { PaymentModule } from './modules/payment.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { StatisticsModule } from './modules/statistics.module';
     PromotionalBannerModule,
     JourneyModule,
     StatisticsModule,
+    PaymentModule 
   ],
   controllers: [AppController],
   providers: [AppService],
