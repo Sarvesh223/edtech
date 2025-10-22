@@ -53,12 +53,16 @@ class SyllabusTopicDto {
   @IsNotEmpty()
   title: string;
 
-  @ApiProperty({ example: 'Complex SQL queries, performance tuning, and optimization' })
+  @ApiProperty({
+    example: 'Complex SQL queries, performance tuning, and optimization',
+  })
   @IsString()
   @IsNotEmpty()
   description: string;
 
-  @ApiProperty({ example: ['Complex joins', 'Window functions', 'Performance tuning'] })
+  @ApiProperty({
+    example: ['Complex joins', 'Window functions', 'Performance tuning'],
+  })
   @IsArray()
   @IsString({ each: true })
   @IsOptional()
@@ -91,7 +95,9 @@ class PhaseDto {
   @IsString({ each: true })
   focusAreas: string[];
 
-  @ApiProperty({ example: ['Complex queries', 'Data structures', 'Schema design'] })
+  @ApiProperty({
+    example: ['Complex queries', 'Data structures', 'Schema design'],
+  })
   @IsArray()
   @IsString({ each: true })
   @IsOptional()
@@ -110,7 +116,9 @@ class ProjectDto {
   @IsNotEmpty()
   title: string;
 
-  @ApiProperty({ example: 'Build a pipeline that processes real-time user interaction data' })
+  @ApiProperty({
+    example: 'Build a pipeline that processes real-time user interaction data',
+  })
   @IsString()
   @IsNotEmpty()
   description: string;
@@ -135,7 +143,9 @@ class ProjectDto {
   @IsString({ each: true })
   skillsDemonstrated: string[];
 
-  @ApiProperty({ example: ['Working pipeline', 'Architecture diagram', 'Documentation'] })
+  @ApiProperty({
+    example: ['Working pipeline', 'Architecture diagram', 'Documentation'],
+  })
   @IsArray()
   @IsString({ each: true })
   @IsOptional()
@@ -158,7 +168,9 @@ class MarketTrendDto {
   @IsNotEmpty()
   title: string;
 
-  @ApiProperty({ example: 'Increasing reliance on AWS, GCP, and Azure-native tools' })
+  @ApiProperty({
+    example: 'Increasing reliance on AWS, GCP, and Azure-native tools',
+  })
   @IsString()
   @IsNotEmpty()
   description: string;
@@ -219,6 +231,11 @@ export class CreateCourseDto {
   @IsString()
   @IsNotEmpty()
   image: string;
+
+  @ApiProperty({ example: 'https://example.com/course-brochure.pdf' })
+  @IsString()
+  @IsNotEmpty()
+  brochure: string;
 
   @ApiProperty({ example: 299.99 })
   @IsNumber()
@@ -364,12 +381,19 @@ export class CreateCourseDto {
   @IsOptional()
   targetCompanies?: string[];
 
-  @ApiProperty({ example: 'Data engineering roles are experiencing exponential demand growth...', required: false })
+  @ApiProperty({
+    example:
+      'Data engineering roles are experiencing exponential demand growth...',
+    required: false,
+  })
   @IsString()
   @IsOptional()
   marketOverview?: string;
 
-  @ApiProperty({ example: 'Strong career growth with high compensation packages...', required: false })
+  @ApiProperty({
+    example: 'Strong career growth with high compensation packages...',
+    required: false,
+  })
   @IsString()
   @IsOptional()
   careerOutlook?: string;

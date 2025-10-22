@@ -72,13 +72,17 @@ __decorate([
     __metadata("design:type", String)
 ], SyllabusTopicDto.prototype, "title", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Complex SQL queries, performance tuning, and optimization' }),
+    (0, swagger_1.ApiProperty)({
+        example: 'Complex SQL queries, performance tuning, and optimization',
+    }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], SyllabusTopicDto.prototype, "description", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: ['Complex joins', 'Window functions', 'Performance tuning'] }),
+    (0, swagger_1.ApiProperty)({
+        example: ['Complex joins', 'Window functions', 'Performance tuning'],
+    }),
     (0, class_validator_1.IsArray)(),
     (0, class_validator_1.IsString)({ each: true }),
     (0, class_validator_1.IsOptional)(),
@@ -123,7 +127,9 @@ __decorate([
     __metadata("design:type", Array)
 ], PhaseDto.prototype, "focusAreas", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: ['Complex queries', 'Data structures', 'Schema design'] }),
+    (0, swagger_1.ApiProperty)({
+        example: ['Complex queries', 'Data structures', 'Schema design'],
+    }),
     (0, class_validator_1.IsArray)(),
     (0, class_validator_1.IsString)({ each: true }),
     (0, class_validator_1.IsOptional)(),
@@ -154,7 +160,9 @@ __decorate([
     __metadata("design:type", String)
 ], ProjectDto.prototype, "title", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Build a pipeline that processes real-time user interaction data' }),
+    (0, swagger_1.ApiProperty)({
+        example: 'Build a pipeline that processes real-time user interaction data',
+    }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
@@ -184,7 +192,9 @@ __decorate([
     __metadata("design:type", Array)
 ], ProjectDto.prototype, "skillsDemonstrated", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: ['Working pipeline', 'Architecture diagram', 'Documentation'] }),
+    (0, swagger_1.ApiProperty)({
+        example: ['Working pipeline', 'Architecture diagram', 'Documentation'],
+    }),
     (0, class_validator_1.IsArray)(),
     (0, class_validator_1.IsString)({ each: true }),
     (0, class_validator_1.IsOptional)(),
@@ -215,7 +225,9 @@ __decorate([
     __metadata("design:type", String)
 ], MarketTrendDto.prototype, "title", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Increasing reliance on AWS, GCP, and Azure-native tools' }),
+    (0, swagger_1.ApiProperty)({
+        example: 'Increasing reliance on AWS, GCP, and Azure-native tools',
+    }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
@@ -274,6 +286,7 @@ class CreateCourseDto {
     title;
     description;
     image;
+    brochure;
     price;
     discountPrice;
     rating;
@@ -320,6 +333,12 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateCourseDto.prototype, "image", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'https://example.com/course-brochure.pdf' }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateCourseDto.prototype, "brochure", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 299.99 }),
     (0, class_validator_1.IsNumber)(),
@@ -486,13 +505,19 @@ __decorate([
     __metadata("design:type", Array)
 ], CreateCourseDto.prototype, "targetCompanies", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Data engineering roles are experiencing exponential demand growth...', required: false }),
+    (0, swagger_1.ApiProperty)({
+        example: 'Data engineering roles are experiencing exponential demand growth...',
+        required: false,
+    }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], CreateCourseDto.prototype, "marketOverview", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Strong career growth with high compensation packages...', required: false }),
+    (0, swagger_1.ApiProperty)({
+        example: 'Strong career growth with high compensation packages...',
+        required: false,
+    }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
