@@ -69,6 +69,9 @@ export class Banner {
 
   @Prop({ default: 0 })
   order: number;
+
+  @Prop({ default: '' })
+  url: string;
 }
 
 export const BannerSchema = SchemaFactory.createForClass(Banner);

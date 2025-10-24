@@ -82,6 +82,10 @@ export class CreateBannerDto {
   @Type(() => TextOverlayDto)
   textOverlay?: TextOverlayDto;
 
+  @ApiProperty()
+  @IsString()
+  url: string;
+
   @ApiProperty({ type: [BannerButtonDto], required: false })
   @IsOptional()
   @IsArray()

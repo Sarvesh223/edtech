@@ -23,6 +23,10 @@ let BannerService = class BannerService {
         this.bannerModel = bannerModel;
     }
     async create(createBannerDto) {
+        createBannerDto.url =
+            createBannerDto.buttons && createBannerDto.buttons.length > 0
+                ? createBannerDto.buttons[0].url
+                : '';
         const createdBanner = new this.bannerModel(createBannerDto);
         return createdBanner.save();
     }
@@ -55,7 +59,7 @@ let BannerService = class BannerService {
         const updatedBanner = await this.bannerModel
             .findByIdAndUpdate(id, updateBannerDto, {
             new: true,
-            runValidators: true
+            runValidators: true,
         })
             .exec();
         if (!updatedBanner) {
@@ -68,7 +72,7 @@ let BannerService = class BannerService {
             .findByIdAndUpdate(id, updateBannerDto, {
             new: true,
             overwrite: true,
-            runValidators: true
+            runValidators: true,
         })
             .exec();
         if (!updatedBanner) {
@@ -119,9 +123,7 @@ let BannerService = class BannerService {
         return updatedBanner;
     }
     async bulkUpdate(filter, updateData) {
-        const result = await this.bannerModel
-            .updateMany(filter, updateData)
-            .exec();
+        const result = await this.bannerModel.updateMany(filter, updateData).exec();
         return { modifiedCount: result.modifiedCount };
     }
     async updateBannerImage(id, backgroundImage, backgroundImageAlt) {

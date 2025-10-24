@@ -12,6 +12,10 @@ export class BannerService {
   ) {}
 
   async create(createBannerDto: CreateBannerDto): Promise<Banner> {
+    createBannerDto.url =
+      createBannerDto.buttons && createBannerDto.buttons.length > 0
+        ? createBannerDto.buttons[0].url
+        : '';
     const createdBanner = new this.bannerModel(createBannerDto);
     return createdBanner.save();
   }
@@ -54,14 +58,11 @@ export class BannerService {
   }
 
   // Partial update (PATCH) - only updates provided fields
-  async update(
-    id: string,
-    updateBannerDto: UpdateBannerDto,
-  ): Promise<Banner> {
+  async update(id: string, updateBannerDto: UpdateBannerDto): Promise<Banner> {
     const updatedBanner = await this.bannerModel
-      .findByIdAndUpdate(id, updateBannerDto, { 
+      .findByIdAndUpdate(id, updateBannerDto, {
         new: true,
-        runValidators: true 
+        runValidators: true,
       })
       .exec();
 
@@ -77,10 +78,10 @@ export class BannerService {
     updateBannerDto: CreateBannerDto,
   ): Promise<Banner> {
     const updatedBanner = await this.bannerModel
-      .findByIdAndUpdate(id, updateBannerDto, { 
+      .findByIdAndUpdate(id, updateBannerDto, {
         new: true,
         overwrite: true,
-        runValidators: true 
+        runValidators: true,
       })
       .exec();
 
@@ -153,10 +154,8 @@ export class BannerService {
     filter: any,
     updateData: Partial<Banner>,
   ): Promise<{ modifiedCount: number }> {
-    const result = await this.bannerModel
-      .updateMany(filter, updateData)
-      .exec();
-    
+    const result = await this.bannerModel.updateMany(filter, updateData).exec();
+
     return { modifiedCount: result.modifiedCount };
   }
 

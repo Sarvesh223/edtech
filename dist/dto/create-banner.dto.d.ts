@@ -17,6 +17,7 @@ export declare class CreateBannerDto {
     backgroundImage: string;
     backgroundImageAlt?: string;
     textOverlay?: TextOverlayDto;
+    url: string;
     buttons?: BannerButtonDto[];
     height?: number;
     isActive?: boolean;

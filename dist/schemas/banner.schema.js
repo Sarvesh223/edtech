@@ -19,6 +19,7 @@ let Banner = class Banner {
     height;
     isActive;
     order;
+    url;
 };
 exports.Banner = Banner;
 __decorate([
@@ -80,6 +81,10 @@ __decorate([
     (0, mongoose_1.Prop)({ default: 0 }),
     __metadata("design:type", Number)
 ], Banner.prototype, "order", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ default: '' }),
+    __metadata("design:type", String)
+], Banner.prototype, "url", void 0);
 exports.Banner = Banner = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Banner);

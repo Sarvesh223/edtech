@@ -93,6 +93,7 @@ class CreateBannerDto {
     backgroundImage;
     backgroundImageAlt;
     textOverlay;
+    url;
     buttons;
     height;
     isActive;
@@ -117,6 +118,11 @@ __decorate([
     (0, class_transformer_1.Type)(() => TextOverlayDto),
     __metadata("design:type", TextOverlayDto)
 ], CreateBannerDto.prototype, "textOverlay", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateBannerDto.prototype, "url", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ type: [BannerButtonDto], required: false }),
     (0, class_validator_1.IsOptional)(),
