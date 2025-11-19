@@ -19,6 +19,9 @@ let Testimonial = class Testimonial {
     message;
     rating;
     studentImage;
+    linkedinUrl;
+    fromCompanyName;
+    toCompanyName;
     studentRole;
     batchYear;
     status;
@@ -54,6 +57,24 @@ __decorate([
     (0, mongoose_1.Prop)({ trim: true }),
     __metadata("design:type", String)
 ], Testimonial.prototype, "studentImage", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ trim: true, default: 'https://www.linkedin.com/in/ravikumarsingh22' }),
+    __metadata("design:type", String)
+], Testimonial.prototype, "linkedinUrl", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        trim: true,
+        default: 'https://png.pngtree.com/element_our/sm/20180627/sm_5b334610deb59.jpg',
+    }),
+    __metadata("design:type", String)
+], Testimonial.prototype, "fromCompanyName", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({
+        trim: true,
+        default: 'https://png.pngtree.com/png-clipart/20180626/ourmid/pngtree-facebook-logo-png-image_3584860.png',
+    }),
+    __metadata("design:type", String)
+], Testimonial.prototype, "toCompanyName", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ trim: true }),
     __metadata("design:type", String)

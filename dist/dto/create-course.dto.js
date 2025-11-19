@@ -287,6 +287,7 @@ class CreateCourseDto {
     description;
     image;
     brochure;
+    video;
     price;
     discountPrice;
     rating;
@@ -336,9 +337,15 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 'https://example.com/course-brochure.pdf' }),
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], CreateCourseDto.prototype, "brochure", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'https://example.com/course-image.jpg' }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], CreateCourseDto.prototype, "video", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 299.99 }),
     (0, class_validator_1.IsNumber)(),

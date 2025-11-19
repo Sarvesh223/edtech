@@ -234,8 +234,13 @@ export class CreateCourseDto {
 
   @ApiProperty({ example: 'https://example.com/course-brochure.pdf' })
   @IsString()
-  @IsNotEmpty()
-  brochure: string;
+  @IsOptional()
+  brochure?: string;
+
+  @ApiProperty({ example: 'https://example.com/course-image.jpg' })
+  @IsString()
+  @IsOptional()
+  video?: string;
 
   @ApiProperty({ example: 299.99 })
   @IsNumber()

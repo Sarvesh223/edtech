@@ -228,6 +228,7 @@ let Course = class Course extends mongoose_2.Document {
     title;
     description;
     image;
+    video;
     brochure;
     price;
     discountPrice;
@@ -268,6 +269,10 @@ __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
 ], Course.prototype, "image", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ default: '' }),
+    __metadata("design:type", String)
+], Course.prototype, "video", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ default: '' }),
     __metadata("design:type", String)

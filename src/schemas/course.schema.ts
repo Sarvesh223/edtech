@@ -143,6 +143,9 @@ export class Course extends Document {
   image: string;
 
   @Prop({ default: '' })
+  video: string;
+
+  @Prop({ default: '' })
   brochure: string;
 
   @Prop({ required: true })

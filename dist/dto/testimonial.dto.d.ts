@@ -6,6 +6,9 @@ export declare class CreateTestimonialDto {
     rating: number;
     studentImage?: string;
     studentRole?: string;
+    toCompanyName?: string;
+    fromCompanyName?: string;
+    linkedinUrl?: string;
     batchYear?: string;
 }
 export declare class UpdateTestimonialDto {

@@ -7,6 +7,9 @@ export declare class Testimonial {
     message: string;
     rating: number;
     studentImage?: string;
+    linkedinUrl?: string;
+    fromCompanyName?: string;
+    toCompanyName?: string;
     studentRole?: string;
     batchYear?: string;
     status: string;

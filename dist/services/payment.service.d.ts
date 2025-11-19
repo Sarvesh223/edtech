@@ -39,6 +39,7 @@ export declare class PaymentService {
                 title: string;
                 description: string;
                 image: string;
+                video: string;
                 brochure: string;
                 price: number;
                 discountPrice: number;

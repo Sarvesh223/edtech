@@ -50,7 +50,8 @@ export declare class CreateCourseDto {
     title: string;
     description: string;
     image: string;
-    brochure: string;
+    brochure?: string;
+    video?: string;
     price: number;
     discountPrice?: number;
     rating?: number;

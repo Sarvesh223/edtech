@@ -72,6 +72,30 @@ export class CreateTestimonialDto {
   @IsString()
   studentRole?: string;
 
+  @ApiPropertyOptional({
+    example: 'https://example.com/company-logo.png',
+    description: 'Student company name',
+  })
+  @IsOptional()
+  @IsString()
+  toCompanyName?: string;
+
+  @ApiPropertyOptional({
+    example: 'https://example.com/company-logo.png',
+    description: 'Student company name',
+  })
+  @IsOptional()
+  @IsString()
+  fromCompanyName?: string;
+
+  @ApiPropertyOptional({
+    example: 'https://linkedin.com/in/johndoe',
+    description: 'Student LinkedIn profile URL',
+  })
+  @IsOptional()
+  @IsString()
+  linkedinUrl?: string;
+
   @ApiPropertyOptional({ example: '2024', description: 'Batch year' })
   @IsOptional()
   @IsString()

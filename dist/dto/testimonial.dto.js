@@ -20,6 +20,9 @@ class CreateTestimonialDto {
     rating;
     studentImage;
     studentRole;
+    toCompanyName;
+    fromCompanyName;
+    linkedinUrl;
     batchYear;
 }
 exports.CreateTestimonialDto = CreateTestimonialDto;
@@ -88,6 +91,33 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateTestimonialDto.prototype, "studentRole", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'https://example.com/company-logo.png',
+        description: 'Student company name',
+    }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateTestimonialDto.prototype, "toCompanyName", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'https://example.com/company-logo.png',
+        description: 'Student company name',
+    }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateTestimonialDto.prototype, "fromCompanyName", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'https://linkedin.com/in/johndoe',
+        description: 'Student LinkedIn profile URL',
+    }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateTestimonialDto.prototype, "linkedinUrl", void 0);
 __decorate([
     (0, swagger_1.ApiPropertyOptional)({ example: '2024', description: 'Batch year' }),
     (0, class_validator_1.IsOptional)(),

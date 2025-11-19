@@ -33,6 +33,23 @@ export class Testimonial {
   @Prop({ trim: true })
   studentImage?: string;
 
+  @Prop({ trim: true, default: 'https://www.linkedin.com/in/ravikumarsingh22' })
+  linkedinUrl?: string;
+
+  @Prop({
+    trim: true,
+    default:
+      'https://png.pngtree.com/element_our/sm/20180627/sm_5b334610deb59.jpg',
+  })
+  fromCompanyName?: string;
+
+  @Prop({
+    trim: true,
+    default:
+      'https://png.pngtree.com/png-clipart/20180626/ourmid/pngtree-facebook-logo-png-image_3584860.png',
+  })
+  toCompanyName?: string;
+
   @Prop({ trim: true })
   studentRole?: string; // e.g., "Student", "Graduate", "Professional"
 
