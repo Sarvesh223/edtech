@@ -270,11 +270,17 @@ __decorate([
     __metadata("design:type", String)
 ], Course.prototype, "image", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ default: '' }),
+    (0, mongoose_1.Prop)({
+        trim: true,
+        default: 'https://youtu.be/WQoB2z67hvY?si=Jjhsc3eq-yWy-7M8',
+    }),
     __metadata("design:type", String)
 ], Course.prototype, "video", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ default: '' }),
+    (0, mongoose_1.Prop)({
+        trim: true,
+        default: 'https://file-examples.com/wp-content/storage/2017/10/file-sample_150kB.pdf',
+    }),
     __metadata("design:type", String)
 ], Course.prototype, "brochure", void 0);
 __decorate([

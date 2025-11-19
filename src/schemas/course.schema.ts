@@ -142,11 +142,18 @@ export class Course extends Document {
   @Prop({ required: true })
   image: string;
 
-  @Prop({ default: 'https://youtu.be/WQoB2z67hvY?si=Jjhsc3eq-yWy-7M8' })
+  @Prop({
+    trim: true,
+    default: 'https://youtu.be/WQoB2z67hvY?si=Jjhsc3eq-yWy-7M8',
+  })
   video?: string;
 
-  @Prop({ default: '' })
-  brochure: string;
+  @Prop({
+    trim: true,
+    default:
+      'https://file-examples.com/wp-content/storage/2017/10/file-sample_150kB.pdf',
+  })
+  brochure?: string;
 
   @Prop({ required: true })
   price: number;

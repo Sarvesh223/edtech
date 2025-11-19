@@ -51,8 +51,8 @@ export declare class Course extends Document {
     title: string;
     description: string;
     image: string;
-    video: string;
-    brochure: string;
+    video?: string;
+    brochure?: string;
     price: number;
     discountPrice: number;
     rating: number;
