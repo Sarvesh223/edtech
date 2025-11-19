@@ -142,7 +142,7 @@ export class Course extends Document {
   @Prop({ required: true })
   image: string;
 
-  @Prop({ default: '' })
+  @Prop({ default: 'https://youtu.be/WQoB2z67hvY?si=Jjhsc3eq-yWy-7M8' })
   video: string;
 
   @Prop({ default: '' })
