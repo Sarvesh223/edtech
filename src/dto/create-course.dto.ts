@@ -214,6 +214,23 @@ class SalaryInfoDto {
   baseCurrency?: string;
 }
 
+class FAQDto {
+  @ApiProperty({
+    example: 'What prerequisites do I need for this course?',
+  })
+  @IsString()
+  @IsNotEmpty()
+  question: string;
+
+  @ApiProperty({
+    example:
+      'You need basic JavaScript knowledge and familiarity with HTML/CSS.',
+  })
+  @IsString()
+  @IsNotEmpty()
+  answer: string;
+}
+
 export class CreateCourseDto {
   @ApiProperty({ example: 'Complete Web Development Bootcamp' })
   @IsString()
@@ -271,11 +288,11 @@ export class CreateCourseDto {
   @IsNotEmpty()
   duration: string;
 
-  @ApiProperty({ type: InstructorDto })
-  @IsObject()
+  @ApiProperty({ type: [InstructorDto] })
+  @IsArray()
   @ValidateNested()
   @Type(() => InstructorDto)
-  instructor: InstructorDto;
+  instructor: InstructorDto[];
 
   @ApiProperty({ example: '507f1f77bcf86cd799439011' })
   @IsString()
@@ -402,4 +419,25 @@ export class CreateCourseDto {
   @IsString()
   @IsOptional()
   careerOutlook?: string;
+
+  @ApiProperty({
+    type: [FAQDto],
+    required: false,
+    description: 'Frequently asked questions for the course',
+    example: [
+      {
+        question: 'What prerequisites do I need?',
+        answer: 'Basic JavaScript knowledge',
+      },
+      {
+        question: 'Can I download course materials?',
+        answer: 'Yes, all materials are downloadable',
+      },
+    ],
+  })
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => FAQDto)
+  @IsOptional()
+  faq?: FAQDto[];
 }

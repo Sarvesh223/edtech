@@ -47,6 +47,11 @@ export declare class SalaryInfo {
     currency: string;
     baseCurrency: string;
 }
+export declare class FAQ {
+    question: string;
+    answer: string;
+    createdAt: Date;
+}
 export declare class Course extends Document {
     title: string;
     description: string;
@@ -58,7 +63,7 @@ export declare class Course extends Document {
     rating: number;
     totalRatings: number;
     duration: string;
-    instructor: Instructor;
+    instructor: Instructor[];
     categoryId: Types.ObjectId;
     level: string;
     enrolledStudents: number;
@@ -78,6 +83,7 @@ export declare class Course extends Document {
     targetCompanies: string[];
     marketOverview?: string;
     careerOutlook?: string;
+    faq: FAQ[];
 }
 export declare const CourseSchema: import("mongoose").Schema<Course, import("mongoose").Model<Course, any, any, any, Document<unknown, any, Course, any> & Course & Required<{
     _id: unknown;

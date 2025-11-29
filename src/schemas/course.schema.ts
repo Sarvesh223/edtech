@@ -131,6 +131,18 @@ export class SalaryInfo {
   baseCurrency: string;
 }
 
+@Schema({ _id: false })
+export class FAQ {
+  @Prop({ required: true })
+  question: string;
+
+  @Prop({ required: true })
+  answer: string;
+
+  @Prop({ default: Date.now })
+  createdAt: Date;
+}
+
 @Schema({ timestamps: true })
 export class Course extends Document {
   @Prop({ required: true })
@@ -170,8 +182,8 @@ export class Course extends Document {
   @Prop({ required: true })
   duration: string; // e.g., "10 hours", "2 weeks"
 
-  @Prop({ type: Instructor, required: true })
-  instructor: Instructor;
+  @Prop({ type: [Instructor], required: true })
+  instructor: Instructor[];
 
   @Prop({ type: Types.ObjectId, ref: 'Category', required: true })
   categoryId: Types.ObjectId;
@@ -230,6 +242,9 @@ export class Course extends Document {
 
   @Prop()
   careerOutlook?: string;
+
+  @Prop({ type: [FAQ], default: [] })
+  faq: FAQ[];
 }
 
 export const CourseSchema = SchemaFactory.createForClass(Course);

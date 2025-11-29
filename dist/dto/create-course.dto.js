@@ -282,6 +282,26 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], SalaryInfoDto.prototype, "baseCurrency", void 0);
+class FAQDto {
+    question;
+    answer;
+}
+__decorate([
+    (0, swagger_1.ApiProperty)({
+        example: 'What prerequisites do I need for this course?',
+    }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], FAQDto.prototype, "question", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({
+        example: 'You need basic JavaScript knowledge and familiarity with HTML/CSS.',
+    }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], FAQDto.prototype, "answer", void 0);
 class CreateCourseDto {
     title;
     description;
@@ -312,6 +332,7 @@ class CreateCourseDto {
     targetCompanies;
     marketOverview;
     careerOutlook;
+    faq;
 }
 exports.CreateCourseDto = CreateCourseDto;
 __decorate([
@@ -381,11 +402,11 @@ __decorate([
     __metadata("design:type", String)
 ], CreateCourseDto.prototype, "duration", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ type: InstructorDto }),
-    (0, class_validator_1.IsObject)(),
+    (0, swagger_1.ApiProperty)({ type: [InstructorDto] }),
+    (0, class_validator_1.IsArray)(),
     (0, class_validator_1.ValidateNested)(),
     (0, class_transformer_1.Type)(() => InstructorDto),
-    __metadata("design:type", InstructorDto)
+    __metadata("design:type", Array)
 ], CreateCourseDto.prototype, "instructor", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: '507f1f77bcf86cd799439011' }),
@@ -529,4 +550,26 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], CreateCourseDto.prototype, "careerOutlook", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({
+        type: [FAQDto],
+        required: false,
+        description: 'Frequently asked questions for the course',
+        example: [
+            {
+                question: 'What prerequisites do I need?',
+                answer: 'Basic JavaScript knowledge',
+            },
+            {
+                question: 'Can I download course materials?',
+                answer: 'Yes, all materials are downloadable',
+            },
+        ],
+    }),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.ValidateNested)({ each: true }),
+    (0, class_transformer_1.Type)(() => FAQDto),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", Array)
+], CreateCourseDto.prototype, "faq", void 0);
 //# sourceMappingURL=create-course.dto.js.map

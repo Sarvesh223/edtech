@@ -46,6 +46,10 @@ declare class SalaryInfoDto {
     currency: string;
     baseCurrency?: string;
 }
+declare class FAQDto {
+    question: string;
+    answer: string;
+}
 export declare class CreateCourseDto {
     title: string;
     description: string;
@@ -57,7 +61,7 @@ export declare class CreateCourseDto {
     rating?: number;
     totalRatings?: number;
     duration: string;
-    instructor: InstructorDto;
+    instructor: InstructorDto[];
     categoryId: string;
     level: string;
     enrolledStudents?: number;
@@ -76,5 +80,6 @@ export declare class CreateCourseDto {
     targetCompanies?: string[];
     marketOverview?: string;
     careerOutlook?: string;
+    faq?: FAQDto[];
 }
 export {};

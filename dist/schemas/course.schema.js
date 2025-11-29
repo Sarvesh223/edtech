@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CourseSchema = exports.Course = exports.SalaryInfo = exports.MarketTrend = exports.Project = exports.Phase = exports.SyllabusTopic = exports.Curriculum = exports.Instructor = void 0;
+exports.CourseSchema = exports.Course = exports.FAQ = exports.SalaryInfo = exports.MarketTrend = exports.Project = exports.Phase = exports.SyllabusTopic = exports.Curriculum = exports.Instructor = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 let Instructor = class Instructor {
@@ -224,6 +224,27 @@ __decorate([
 exports.SalaryInfo = SalaryInfo = __decorate([
     (0, mongoose_1.Schema)({ _id: false })
 ], SalaryInfo);
+let FAQ = class FAQ {
+    question;
+    answer;
+    createdAt;
+};
+exports.FAQ = FAQ;
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], FAQ.prototype, "question", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], FAQ.prototype, "answer", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ default: Date.now }),
+    __metadata("design:type", Date)
+], FAQ.prototype, "createdAt", void 0);
+exports.FAQ = FAQ = __decorate([
+    (0, mongoose_1.Schema)({ _id: false })
+], FAQ);
 let Course = class Course extends mongoose_2.Document {
     title;
     description;
@@ -255,6 +276,7 @@ let Course = class Course extends mongoose_2.Document {
     targetCompanies;
     marketOverview;
     careerOutlook;
+    faq;
 };
 exports.Course = Course;
 __decorate([
@@ -304,8 +326,8 @@ __decorate([
     __metadata("design:type", String)
 ], Course.prototype, "duration", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ type: Instructor, required: true }),
-    __metadata("design:type", Instructor)
+    (0, mongoose_1.Prop)({ type: [Instructor], required: true }),
+    __metadata("design:type", Array)
 ], Course.prototype, "instructor", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ type: mongoose_2.Types.ObjectId, ref: 'Category', required: true }),
@@ -383,6 +405,10 @@ __decorate([
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Course.prototype, "careerOutlook", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: [FAQ], default: [] }),
+    __metadata("design:type", Array)
+], Course.prototype, "faq", void 0);
 exports.Course = Course = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Course);

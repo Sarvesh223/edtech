@@ -176,7 +176,7 @@ export declare class CourseService {
             rating: number;
             totalRatings: number;
             duration: string;
-            instructor: import("../schemas/course.schema").Instructor;
+            instructor: import("../schemas/course.schema").Instructor[];
             categoryId: Types.ObjectId;
             level: string;
             enrolledStudents: number;
@@ -196,6 +196,7 @@ export declare class CourseService {
             targetCompanies: string[];
             marketOverview?: string;
             careerOutlook?: string;
+            faq: import("../schemas/course.schema").FAQ[];
             _id: unknown;
             $locals: Record<string, unknown>;
             $op: "save" | "validate" | "remove" | null;
